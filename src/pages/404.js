@@ -18,10 +18,6 @@ const NotFoundPage = (props) => {
 
   return (
     <div className="notfound">
-      <HeadMeta
-        title={`${t("Meta_Title")} | ${t("Meta_Title")}`}
-        description={t("Meta_Desc")}
-      />
       <Layout footerInfo={footerInfo}>
         <div className="notfound__box">
           <div className="notfound__content">
@@ -43,6 +39,21 @@ const NotFoundPage = (props) => {
     </div>
   );
 };
+
+export const Head = () => (
+  <HeadMeta
+    title={
+      window.location.href.includes("/en/")
+        ? "Artis Ozolins | 404"
+        : "Artis Ozoliņš | 404"
+    }
+    description={
+      window.location.href.includes("/en/")
+        ? "Vadu dažāda veida pasākumus – sākot no korporatīvajiem līdz izklaides, gan lielus, gan mazus, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
+        : "Vadu dažāda veida pasākumus – sākot no korporatīvajiem līdz izklaides, gan lielus, gan mazus, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
+    }
+  />
+);
 
 export default NotFoundPage;
 

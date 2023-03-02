@@ -1,14 +1,12 @@
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import { graphql } from "gatsby";
 import React from "react";
-
-// import HeadMeta from "../components/HeadMeta";
 import Layout from "../components/layout";
 import Activities from "../components/activities/Activities";
 import Clients from "../components/clients/Clients";
 import Overview from "../components/overview/Overview";
 import Hero from "../components/hero/Hero";
-import Head from "../components/HeadMeta";
+import HeadMeta from "../components/HeadMeta";
 
 export default function Home(props) {
   const { t } = useTranslation();
@@ -47,10 +45,6 @@ export default function Home(props) {
 
   return (
     <>
-      <Head
-        title={`${t("Meta_Title")} | ${t("Page_Name_For_Title_Home")}`}
-        description={t("Meta_Desc")}
-      />
       <Layout footerInfo={footerInfo}>
         <div className="page page--home">
           <Hero type="home" info={heroInfo} />
@@ -67,6 +61,21 @@ export default function Home(props) {
     </>
   );
 }
+
+export const Head = () => (
+  <HeadMeta
+    title={
+      window.location.href.includes("/en/")
+        ? "Artis Ozolins | Event host"
+        : "Artis Ozoliņš | Pasākuma vadītājs klātienē un tiešsaistē"
+    }
+    description={
+      window.location.href.includes("/en/")
+        ? "I host different types of events - both in-person and online, from corporate to entertaining, in Latvian and English. Feel free to write or call me. I will be happy to be your event host. Let’s create memories together!"
+        : "Vadu dažāda veida pasākumus – gan klātienē, gan online, sākot no korporatīvajiem līdz izklaides, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
+    }
+  />
+);
 
 export const query = graphql`
   query ($language: String!) {

@@ -1,4 +1,3 @@
-// i18next-extract-mark-ns-start index
 import React from "react";
 import HeadMeta from "../components/HeadMeta";
 import Layout from "../components/layout";
@@ -8,12 +7,10 @@ import Reviews from "../components/reviews/Reviews";
 import Button from "../components/button/Button";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import { graphql } from "gatsby";
-
 import heroImage from "../images/pasakuma-vaditajs-hero-2021.jpg";
 import firstArticleImage from "../images/DTA.jpeg";
 import secondArticleImage from "../images/eventIgnition.jpg";
 import thirdArticleImage from "../images/event-inovuss.jpg";
-
 import firstReviewImage from "../images/elita-apine.jpg";
 import secondReviewImage from "../images/santa-zunda.jpg";
 
@@ -95,10 +92,6 @@ const EwentOrganiser = ({ data }) => {
 
   return (
     <>
-      <HeadMeta
-        title={`${t("Meta_Title")} | ${t("Page_Name_For_Title")}`}
-        description={t("Meta_desc")}
-      />
       <Layout footerInfo={footerInfo}>
         <div className="page page--wedding">
           <Hero type="wedding" info={heroInfo} image={heroImage} />
@@ -124,6 +117,21 @@ const EwentOrganiser = ({ data }) => {
     </>
   );
 };
+
+export const Head = () => (
+  <HeadMeta
+    title={
+      window.location.href.includes("/en/")
+        ? "Artis Ozolins | Event host"
+        : "Artis Ozoliņš | Pasākuma vadītājs klātienē un tiešsaistē"
+    }
+    description={
+      window.location.href.includes("/en/")
+        ? "I host different types of events - both in-person and online, from corporate to entertaining, in Latvian and English. Feel free to write or call me. I will be happy to be your event host. Let’s create memories together!"
+        : "Vadu dažāda veida pasākumus – gan klātienē, gan online, sākot no korporatīvajiem līdz izklaides, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
+    }
+  />
+);
 
 export default EwentOrganiser;
 

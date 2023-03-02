@@ -6,7 +6,6 @@ import ArticleCard from "../components/article-card/ArticleCard";
 import Button from "../components/button/Button";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import { graphql } from "gatsby";
-
 import heroImage from "../images/radioHomePage.jpg";
 import firstArticleImage from "../images/DigitalasBrokastis.jpeg";
 import secondArticleImage from "../images/RadioNaba.jpeg";
@@ -64,10 +63,6 @@ const RadioPersona = (props) => {
 
   return (
     <>
-      <HeadMeta
-        title={`${t("Meta_Title")} | ${t("Page_Name_For_Title")}`}
-        description={t("Meta_desc")}
-      />
       <Layout footerInfo={footerInfo}>
         <div className="page page--wedding">
           <Hero type="wedding" info={heroInfo} image={heroImage} />
@@ -93,6 +88,21 @@ const RadioPersona = (props) => {
     </>
   );
 };
+
+export const Head = () => (
+  <HeadMeta
+    title={
+      window.location.href.includes("/en/")
+        ? "Artis Ozolins | Radio personality"
+        : "Artis Ozoliņš | Radio personība"
+    }
+    description={
+      window.location.href.includes("/en/")
+        ? "I host different types of events - both in-person and online, from corporate to entertaining, in Latvian and English. Feel free to write or call me. I will be happy to be your event host. Let’s create memories together!"
+        : "Vadu dažāda veida pasākumus – sākot no korporatīvajiem līdz izklaides, gan lielus, gan mazus, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas.Radio personība."
+    }
+  />
+);
 
 export default RadioPersona;
 
