@@ -1,33 +1,49 @@
-# How to change texts in localisation.
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby Minimal Starter
+</h1>
 
-## If you want to change some text for some page e.g. radio-personiba page
+## 🚀 Quick start
 
-- You have to go to the public folder-> locales -> needed language folder -> open file with the name of the page radio-personiba.js
-- Find the line where you want to change the text e.g. `"Article_1_Title": "Digitālās brokastis"`, then change it `"Article_1_Title": "Digitālās broadcasts"` then save your changes
-- Write commit msg and commit
-- Do the same for second language if needed
+1.  **Create a Gatsby site.**
 
-# How to change the image
+    Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
-## If you wantto change image for some page e.g. radio-personiba page
+    ```shell
+    # create a new Gatsby site using the minimal starter
+    npm init gatsby
+    ```
 
-- First you need to upload new image e.g. ArtisRadioImage.smth into public folder
-- Go to the pages folder -> needed page folder (radio-personiba.js in our case)
-- Find the place where you want to add this image e.g. we want to change the second article image
-- `const articles = [
-  {
-    item: "/DigitalasBrokastis.jpeg",
-    type: "image",
-    title: t("radio_personiba:Article_1_Title"),
-    content: t("radio_personiba:Article_1_Content"),
-  },
-  {
-    item: "/RadioNaba.jpeg",
-    type: "image",
-    title: t("radio_personiba:Article_2_Title"),
-    content: t("radio_personiba:Article_2_Content"),
-  },
-];`
-- Second article have the `item: "/RadioNaba.jpeg"`, then change it to -> `item: "/ArtisRadioImage.smth"`
-- Write commit msg and commit
-- Do the same for second language if needed
+2.  **Start developing.**
+
+    Navigate into your new site’s directory and start it up.
+
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
+    ```
+
+3.  **Open the code and start customizing!**
+
+    Your site is now running at http://localhost:8000!
+
+    Edit `src/pages/index.js` to see your site update in real-time!
+
+4.  **Learn more**
+
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+## 🚀 Quick start (Netlify)
+
+Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+
+[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
