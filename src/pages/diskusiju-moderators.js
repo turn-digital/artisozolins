@@ -1,5 +1,3 @@
-// i18next-extract-mark-ns-start index
-
 import React from "react";
 import HeadMeta from "../components/HeadMeta";
 import Layout from "../components/layout";
@@ -9,12 +7,10 @@ import Reviews from "../components/reviews/Reviews";
 import Button from "../components/button/Button";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import { graphql } from "gatsby";
-
 import heroImage from "../images/moderators.jpg";
 import firstArticleImage from "../images/moderator-event-disc.jpg";
 import secondArticleImage from "../images/moderator-event-lbp-2.png";
 import thirdArticleImage from "../images/moderator-event-DFF.jpg";
-
 import firstReviewImage from "../images/janis-andzans.jpg";
 import secondReviewImage from "../images/anete-ugaine.jpg";
 
@@ -96,10 +92,6 @@ const DiscussionModerator = ({ data }) => {
 
   return (
     <>
-      <HeadMeta
-        title={`${t("Meta_Title")} | ${t("Page_Name_For_Title")}`}
-        description={t("Meta_desc")}
-      />
       <Layout footerInfo={footerInfo}>
         <div className="page page--wedding">
           <Hero type="wedding" info={heroInfo} image={heroImage} />
@@ -125,6 +117,21 @@ const DiscussionModerator = ({ data }) => {
     </>
   );
 };
+
+export const Head = () => (
+  <HeadMeta
+    title={
+      window.location.href.includes("/en/")
+        ? "Artis Ozolins | Discussion Moderator"
+        : "Artis Ozoliņš | Moderators"
+    }
+    description={
+      window.location.href.includes("/en/")
+        ? "I host different types of events - both in-person and online, from corporate to entertaining, in Latvian and English. Feel free to write or call me. I will be happy to be your event host. Let’s create memories together!"
+        : "Vadu dažāda veida pasākumus – sākot no korporatīvajiem līdz izklaides, gan lielus, gan mazus, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
+    }
+  />
+);
 
 export default DiscussionModerator;
 
