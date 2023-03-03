@@ -3,12 +3,12 @@
  */
 
 const { languages, defaultLanguage } = require("./languages");
-const siteUrl = process.env.URL || `https://fallback.net`;
+const siteUrl = process.env.URL || `https://www.artisozolins.lv`;
 
 module.exports = {
   siteMetadata: {
     title: `gatsby-check`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.artisozolins.lv`,
   },
   plugins: [
     `gatsby-plugin-image`,
