@@ -6,6 +6,8 @@ import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Image404 from "../images/404.svg";
 
+const isBrowser = typeof window !== "undefined";
+
 const NotFoundPage = (props) => {
   const { t } = useTranslation();
   const footerInfo = {
@@ -40,20 +42,24 @@ const NotFoundPage = (props) => {
   );
 };
 
-export const Head = () => (
-  <HeadMeta
-    title={
-      window.location.href.includes("/en/")
-        ? "Artis Ozolins | 404"
-        : "Artis Ozoliņš | 404"
-    }
-    description={
-      window.location.href.includes("/en/")
-        ? "Vadu dažāda veida pasākumus – sākot no korporatīvajiem līdz izklaides, gan lielus, gan mazus, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
-        : "Vadu dažāda veida pasākumus – sākot no korporatīvajiem līdz izklaides, gan lielus, gan mazus, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
-    }
-  />
-);
+export const Head = () => {
+  if (isBrowser) {
+    return (
+      <HeadMeta
+        title={
+          window.location.href.includes("/en/")
+            ? "Artis Ozolins | 404"
+            : "Artis Ozoliņš | 404"
+        }
+        description={
+          window.location.href.includes("/en/")
+            ? "Vadu dažāda veida pasākumus – sākot no korporatīvajiem līdz izklaides, gan lielus, gan mazus, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
+            : "Vadu dažāda veida pasākumus – sākot no korporatīvajiem līdz izklaides, gan lielus, gan mazus, latviski un angliski. Improvizācijas teātris un radio raidījuma vadīšana man devusi spēju arī moderēt dažāda veida diskusijas un iedegt dzirksteles cilvēku acīs, vadot kāzas."
+        }
+      />
+    );
+  }
+};
 
 export default NotFoundPage;
 
