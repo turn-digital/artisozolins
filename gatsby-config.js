@@ -6,6 +6,7 @@ const { languages, defaultLanguage } = require("./languages");
 const siteUrl = process.env.URL || `https://www.artisozolins.lv`;
 
 module.exports = {
+  pathPrefix: `/`,
   siteMetadata: {
     title: `gatsby-check`,
     siteUrl: `https://www.artisozolins.lv`,
