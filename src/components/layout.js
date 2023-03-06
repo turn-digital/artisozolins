@@ -12,10 +12,8 @@ const Layout = ({ children, footerInfo }) => {
   return (
     <>
       <Header />
-      <div>
         <main>{children}</main>
         <Footer footerInfo={footerInfo} />
-      </div>
     </>
   );
 };
