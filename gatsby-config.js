@@ -6,7 +6,6 @@ const { languages, defaultLanguage } = require("./languages");
 const siteUrl = process.env.URL || `https://www.artisozolins.lv`;
 
 module.exports = {
-  pathPrefix: `/`,
   siteMetadata: {
     title: `gatsby-check`,
     siteUrl: `https://www.artisozolins.lv`,
@@ -18,6 +17,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
     {
