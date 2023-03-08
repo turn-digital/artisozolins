@@ -12,7 +12,7 @@ const Layout = ({ children, footerInfo }) => {
   return (
     <>
       <Header />
-        <main>{children}</main>
+        <main className="notfound__flex">{children}</main>
         <Footer footerInfo={footerInfo} />
     </>
   );

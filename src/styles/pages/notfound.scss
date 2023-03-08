@@ -4,8 +4,8 @@
     flex-direction: column;
     background-color: $color-primary;
 
-    footer {
-        margin-top: auto;
+    &__flex {
+        flex: 1;
     }
 
     &__box {
